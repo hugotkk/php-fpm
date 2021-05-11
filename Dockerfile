@@ -4,6 +4,9 @@ LABEL maintainer="Vincent Letourneau <vincent@nanoninja.com>"
 
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y \
+    locales \
+    locales-all \
+    webp \
     g++ \
     libbz2-dev \
     libc-client-dev \
@@ -29,12 +32,12 @@ RUN apt-get update && apt-get upgrade -y \
     wget \
     unzip \
     zlib1g-dev \
+    webp \
     && docker-php-ext-install -j$(nproc) \
     bcmath \
     bz2 \
     calendar \
     exif \
-    gettext \
     mysqli \
     opcache \
     pdo_mysql \
@@ -44,6 +47,7 @@ RUN apt-get update && apt-get upgrade -y \
     sockets \
     xmlrpc \
     xsl \
+    mbstring \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
     && PHP_OPENSSL=yes docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
