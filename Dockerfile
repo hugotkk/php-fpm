@@ -5,6 +5,7 @@ LABEL maintainer="Vincent Letourneau <vincent@nanoninja.com>"
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y \
     locales \
+    libonig-dev \
     locales-all \
     webp \
     g++ \
